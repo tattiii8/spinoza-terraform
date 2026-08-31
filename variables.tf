@@ -22,7 +22,6 @@ variable "notify_db_port" {
 }
 variable "image_tag" { type = string }
 variable "aspnetcore_environment" { type = string }
-variable "s3_bucket_name" { type = string }
 variable "aws_access_key_id" {
   type      = string
   sensitive = true
