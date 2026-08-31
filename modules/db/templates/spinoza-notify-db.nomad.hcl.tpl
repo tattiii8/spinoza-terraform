@@ -18,7 +18,7 @@ job "spinoza-db" {
       driver = "docker"
 
       config {
-        image = "${ecr_registry}/spinoza-db:16-alpine"
+        image = "${ecr_registry}/deleuze-db:16-alpine"
         ports = ["db"]
         args  = ["-c", "log_statement=all"]
       }
