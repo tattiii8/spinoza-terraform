@@ -4,7 +4,7 @@ resource "nomad_variable" "gateway" {
   items = {
     CLOUDFLARE_TUNNEL_TOKEN = var.cloudflare_tunnel_token
     HOST_IP                 = var.host_ip
-    notify_PORT              = tostring(var.notify_port)
+    NOTIFY_PORT              = tostring(var.notify_port)
   }
 }
 
