@@ -66,7 +66,7 @@ server {
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection "upgrade";
 
-    location /api/notify/ {
+    location /api/notify {
         proxy_pass http://{{ .HOST_IP }}:{{ .NOTIFY_PORT }};
     }
 }
