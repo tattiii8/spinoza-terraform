@@ -1,5 +1,5 @@
 resource "nomad_variable" "notify" {
-  path = "nomad/jobs/flaubert-notify"
+  path = "nomad/jobs/spinoza-notify"
 
   items = {
     ASPNETCORE_ENVIRONMENT               = var.aspnetcore_environment
@@ -11,8 +11,8 @@ resource "nomad_variable" "notify" {
   }
 }
 
-resource "nomad_job" "flaubert_notify" {
-  jobspec = templatefile("${path.module}/templates/flaubert-notify.nomad.hcl.tpl", {
+resource "nomad_job" "spinoza_notify" {
+  jobspec = templatefile("${path.module}/templates/spinoza-notify.nomad.hcl.tpl", {
     datacenter   = var.datacenter
     ecr_registry = var.ecr_registry
     image_tag    = var.image_tag
