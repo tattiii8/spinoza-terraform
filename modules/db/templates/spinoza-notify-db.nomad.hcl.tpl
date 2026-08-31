@@ -25,7 +25,7 @@ job "spinoza-db" {
 
       template {
         data = <<EOF
-{{ with nomadVar "nomad/jobs/spinoza-notify-db" }}
+{{ with nomadVar "nomad/jobs/spinoza-db" }}
 {{ range $k, $v := . }}
 {{ $k }}="{{ $v }}"
 {{ end }}

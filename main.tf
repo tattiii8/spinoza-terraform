@@ -17,7 +17,7 @@ provider "nomad" {
 
 locals {
   ecr_registry  = "${var.aws_account_id}.dkr.ecr.${var.aws_region}.amazonaws.com"
-  notify_port    = 5005
+  notify_port    = 5015
   notify_db_name = "spinoza-notify"
   db_user       = "spinozaadmin"
 }

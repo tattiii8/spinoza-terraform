@@ -1,5 +1,5 @@
 resource "nomad_variable" "notify_db" {
-  path = "nomad/jobs/spinoza-notify-db"
+  path = "nomad/jobs/spinoza-db"
 
   items = {
     POSTGRES_USER     = var.db_user
