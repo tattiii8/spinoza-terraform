@@ -1,4 +1,4 @@
-job "flaubert-drive" {
+job "spinoza-drive" {
   datacenters = ["${datacenter}"]
   type        = "service"
 
@@ -9,18 +9,18 @@ job "flaubert-drive" {
       port "http" { static = ${drive_port} }
     }
 
-    task "flaubert-drive" {
+    task "spinoza-drive" {
       driver = "docker"
 
       config {
-        image      = "${ecr_registry}/flaubert-drive:${image_tag}"
+        image      = "${ecr_registry}/spinoza-drive:${image_tag}"
         ports      = ["http"]
         force_pull = true
       }
 
       template {
         data = <<EOF
-{{ with nomadVar "nomad/jobs/flaubert-drive" }}
+{{ with nomadVar "nomad/jobs/spinoza-drive" }}
 {{ range $k, $v := . }}
 {{ $k }}="{{ $v }}"
 {{ end }}
