@@ -47,6 +47,12 @@ module "notify" {
   aws_region             = var.aws_region
   aws_access_key_id      = var.aws_access_key_id
   aws_secret_access_key  = var.aws_secret_access_key
+  ses_smtp_host          = var.ses_smtp_host
+  ses_smtp_port          = var.ses_smtp_port
+  ses_smtp_username      = var.ses_smtp_username
+  ses_smtp_password      = var.ses_smtp_password
+  ses_from_address       = var.ses_from_address
+  ses_from_name          = var.ses_from_name
 
   depends_on = [module.db]
 }

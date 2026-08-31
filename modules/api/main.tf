@@ -8,6 +8,12 @@ resource "nomad_variable" "notify" {
     AWS__Region                          = var.aws_region
     AWS_ACCESS_KEY_ID                    = var.aws_access_key_id
     AWS_SECRET_ACCESS_KEY                = var.aws_secret_access_key
+    SES_SMTP_HOST                        = var.ses_smtp_host
+    SES_SMTP_PORT                        = tostring(var.ses_smtp_port)
+    SES_SMTP_USERNAME                    = var.ses_smtp_username
+    SES_SMTP_PASSWORD                    = var.ses_smtp_password
+    SES_FROM_ADDRESS                     = var.ses_from_address
+    SES_FROM_NAME                        = var.ses_from_name
   }
 }
 
