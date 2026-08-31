@@ -1,4 +1,4 @@
-job "spinoza-drive" {
+job "spinoza-notify" {
   datacenters = ["${datacenter}"]
   type        = "service"
 
@@ -6,21 +6,21 @@ job "spinoza-drive" {
     count = 1
 
     network {
-      port "http" { static = ${drive_port} }
+      port "http" { static = ${notify_port} }
     }
 
-    task "spinoza-drive" {
+    task "spinoza-notify" {
       driver = "docker"
 
       config {
-        image      = "${ecr_registry}/spinoza-drive:${image_tag}"
+        image      = "${ecr_registry}/spinoza-notify:${image_tag}"
         ports      = ["http"]
         force_pull = true
       }
 
       template {
         data = <<EOF
-{{ with nomadVar "nomad/jobs/spinoza-drive" }}
+{{ with nomadVar "nomad/jobs/spinoza-notify" }}
 {{ range $k, $v := . }}
 {{ $k }}="{{ $v }}"
 {{ end }}
