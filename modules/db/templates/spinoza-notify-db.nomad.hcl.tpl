@@ -1,31 +1,31 @@
-job "flaubert-db" {
+job "spinoza-db" {
   datacenters = ["${datacenter}"]
   type        = "service"
 
-  group "flaubert-drive" {
+  group "spinoza-notify" {
     count = 1
 
     network {
       mode = "bridge"
 
       port "db" {
-        static = ${drive_db_port}
+        static = ${notify_db_port}
         to     = 5432
       }
     }
 
-    task "flaubert-drive" {
+    task "spinoza-notify" {
       driver = "docker"
 
       config {
-        image = "${ecr_registry}/flaubert-db:16-alpine"
+        image = "${ecr_registry}/spinoza-db:16-alpine"
         ports = ["db"]
         args  = ["-c", "log_statement=all"]
       }
 
       template {
         data = <<EOF
-{{ with nomadVar "nomad/jobs/flaubert-drive-db" }}
+{{ with nomadVar "nomad/jobs/spinoza-notify-db" }}
 {{ range $k, $v := . }}
 {{ $k }}="{{ $v }}"
 {{ end }}

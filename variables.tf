@@ -13,12 +13,12 @@ variable "host_ip" {
 variable "db_password" {
   type        = string
   sensitive   = true
-  description = "PostgreSQL password for flaubert-notify"
+  description = "PostgreSQL password for spinoza-notify"
 }
 variable "notify_db_port" {
   type        = number
-  default     = 5452
-  description = "PostgreSQL port for flaubert-notify"
+  default     = 5462
+  description = "PostgreSQL port for spinoza-notify"
 }
 variable "image_tag" { type = string }
 variable "aspnetcore_environment" { type = string }
