@@ -7,7 +7,7 @@ job "flaubert-gateway" {
 
     network {
       port "http" {
-        static = 8889
+        static = 8990
         to     = 80
       }
     }
