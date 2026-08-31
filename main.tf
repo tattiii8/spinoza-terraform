@@ -45,7 +45,6 @@ module "notify" {
   notify_db_name          = local.notify_db_name
   notify_db_port          = var.notify_db_port
   aws_region             = var.aws_region
-  s3_bucket_name         = var.s3_bucket_name
   aws_access_key_id      = var.aws_access_key_id
   aws_secret_access_key  = var.aws_secret_access_key
 

@@ -6,7 +6,6 @@ resource "nomad_variable" "notify" {
     ASPNETCORE_URLS                      = "http://+:${tostring(var.notify_port)}"
     ConnectionStrings__DefaultConnection = "Host=${var.host_ip};Port=${tostring(var.notify_db_port)};Database=${var.notify_db_name};Username=${var.db_user};Password=${var.db_password}"
     AWS__Region                          = var.aws_region
-    AWS__BucketName                      = var.s3_bucket_name
     AWS_ACCESS_KEY_ID                    = var.aws_access_key_id
     AWS_SECRET_ACCESS_KEY                = var.aws_secret_access_key
   }

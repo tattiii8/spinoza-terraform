@@ -12,7 +12,6 @@ variable "db_password" {
 variable "notify_db_name" { type = string }
 variable "notify_db_port" { type = number }
 variable "aws_region" { type = string }
-variable "s3_bucket_name" { type = string }
 variable "aws_access_key_id" {
   type      = string
   sensitive = true
