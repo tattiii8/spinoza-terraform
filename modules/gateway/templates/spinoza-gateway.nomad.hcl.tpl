@@ -1,4 +1,4 @@
-job "flaubert-gateway" {
+job "spinoza-gateway" {
   datacenters = ["${datacenter}"]
   type        = "service"
 
@@ -22,7 +22,7 @@ job "flaubert-gateway" {
 
       template {
         data = <<EOF
-{{ with nomadVar "nomad/jobs/flaubert-gateway" }}
+{{ with nomadVar "nomad/jobs/spinoza-gateway" }}
 TUNNEL_TOKEN="{{ .CLOUDFLARE_TUNNEL_TOKEN }}"
 {{ end }}
 EOF
@@ -48,7 +48,7 @@ EOF
 
       template {
         data = <<EOF
-{{ with nomadVar "nomad/jobs/flaubert-gateway" }}
+{{ with nomadVar "nomad/jobs/spinoza-gateway" }}
 server {
     listen 80;
     server_name _;
