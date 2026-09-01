@@ -33,7 +33,7 @@ variable "aws_secret_access_key" {
 
 variable "ses_smtp_host" {
   type        = string
-  default     = "email-smtp.ap-northeast-1.amazonaws.com"
+  default     = "enqgkbvyuyv4.edpv.mail-manager-smtp.amazonaws.com"
   description = "Amazon SES SMTP endpoint"
 }
 
